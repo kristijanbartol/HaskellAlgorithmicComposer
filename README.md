@@ -1,1 +1,1 @@
-To be written... Developed on weekly base.
+To be written... Developing on weekly base.
