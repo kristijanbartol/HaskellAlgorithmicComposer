@@ -1,8 +1,8 @@
-module Interlude 
-       (  childSong6,  -- :: Music Pitch, 
-          prefix       -- :: [Music a] -> Music a
-       )  where
-import Euterpea
+> module Interlude 
+>        (  childSong6,  -- :: Music Pitch, 
+>           prefix       -- :: [Music a] -> Music a
+>        )  where
+> import Euterpea
 
 > addDur       :: Dur -> [Dur -> Music a] -> Music a
 > addDur d ns  =  let f n = n d
@@ -18,10 +18,10 @@ import Euterpea
 > b2  = addDur dqn [b 2,   es 3,  fs 3,  es 3]
 > b3  = addDur dqn [as 2,  fs 3,  g 3,   fs 3]
 
-> bassLine =  times 3 b1 :+: times 2 b2 :+: 
->             times 4 b3 :+: times 5 b1
+> bassLine =  timesM 3 b1 :+: timesM 2 b2 :+: 
+>             timesM 4 b3 :+: timesM 5 b1
 
-> mainVoice = times 3 v1 :+: v2
+> mainVoice = timesM 3 v1 :+: v2
 
 > v1   = v1a :+: graceNote (-1) (d 4 qn) :+: v1b                 --  bars 1-2
 > v1a  = addDur en [a 4, e 4, d 4, fs 4, cs 4, b 3, e 4, b 3]
